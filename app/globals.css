@@ -1,27 +1,91 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", system-ui;
+  font-weight: 300;
+  font-style: normal;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.custom-timing{
+
+  transition:0.4s cubic-bezier(0.4, 0.88, 1, 1)
+}
+
+.headshot-img{
+  object-fit: contain;
+  border-radius: 100%;
+}
+
+.scroll-section {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  width: 100vw;
+  height:100vh;
+  background-color: navy;
+  scroll-behavior: smooth;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw; 
+  scroll-snap-align: start;
+  height: 100%; /* Full viewport height */
+  background-color: navy;
+  flex-shrink: 0; /* Prevent shrinking */
+  color:gold;
+  font-size: 30px;
+}
+
+.scroll-section::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.scroll-arrow.left {
+  left: 10px;
+}
+
+.scroll-arrow.right {
+  right: 10px;
+}
+
+.scroll-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Hide the scrollbar */
+.scroll-section::-webkit-scrollbar {
+  display: none;
 }
