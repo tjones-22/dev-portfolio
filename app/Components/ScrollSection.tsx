@@ -6,7 +6,9 @@ import { useRef } from "react";
 const description = [
     ` I am in a band called The Latest Victim and I made our webpage to add to my project portfilio. I usedthe Next.JS framework
             with tailwind as my framework. Deployed to Hostinger using the npm build command. I learned how to use models, create 
-            video tags so people can't download videos, and how to make an audio player on a webpage. `,
+            video tags so people can't download videos,how to make an audio player on a webpage, and the struggles of responsive web development. `,
+
+            
     `The Jones Family Chore Site is a simple and efficient tool that automatically rotates daily and weekly chores within the family. 
     Built using React for the frontend and Express on the backend, it ensures that chores are fairly distributed and updated regularly. 
     Without the need for user accounts, the system keeps things straightforward, helping the Jones family manage their household tasks effortlessly.`
@@ -25,9 +27,11 @@ const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
     <section>
+     
     <div className="relative w-screen h-screen">
-      {/* Scrollable Section */}
+    
       <div className="scroll-section" ref={scrollRef}>
+      
         <Project
           imgSrc="images/TLV_Website_SC.png"
           githubLink="https://github.com/tjones-22/thelatestvictimwebsite"
@@ -38,7 +42,7 @@ const scrollRef = useRef<HTMLDivElement>(null);
 
         <Project
           imgSrc="images/JonesChore_SC.png"
-          githubLink="https://joneschores.org/"
+          githubLink="https://github.com/tristanonesdev/jones-chores-site"
           projectLink="https://joneschores.org/"
           description={description[1]}
           title="Jones Family Chore Site"
