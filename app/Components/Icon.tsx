@@ -5,9 +5,9 @@ interface IconProps {
 const Icon = ({src,title}:IconProps) => {
     return (  
         <>
-        <div className=" custom-timing flex flex-col items-center justify-evenly h-[5vh] hover:border-b-2 hover:border-black">
+        <div className=" custom-timing flex flex-wrap flex-row lg:flex-col  w-[30vw] items-center justify-around h-[5vh]">
 
-        <img src={src} alt={title}/>
+        <img src={src} alt={title} className="w-[5vw] h-[5vh "/>
 
         <p>{title}</p>
         </div>
