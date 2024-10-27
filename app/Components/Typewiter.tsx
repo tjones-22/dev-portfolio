@@ -21,7 +21,7 @@ const Typewiter = () => {
   
    
     return ( 
-        <div className="mt-[5vh] mb-[5vh] text-[40px]">
+        <div className="mt-[5vh] mb-[5vh] text-[35px] lg:text-[40px]">
         <p> I am a <span ref={el} className="text-blue-800 font-bold"></span></p>
         
       </div>

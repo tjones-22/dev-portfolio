@@ -37,7 +37,7 @@ body {
 
 .custom-timing{
 
-  transition:0.1s cubic-bezier(0.44, 0.83, 0.58, 1);
+  transition:1s cubic-bezier(0.44, 0.83, 0.58, 1);
 }
 
 .headshot-img{
