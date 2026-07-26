@@ -1,65 +1,108 @@
-"use client"
+"use client";
 
-import Project from "./Project";
-import { useRef } from "react";
+const features = [
+  "Google OAuth sign-in with protected user flows",
+  "One-time and recurring bill management",
+  "Calendar-based balance simulation",
+  "Notifications for scheduled bills",
+  "Mobile-responsive dashboard",
+];
 
-const description = [
-    ` I am in a band called The Latest Victim and I made our webpage to add to my project portfilio. I usedthe Next.JS framework
-            with tailwind as my framework. Deployed to Hostinger using the npm build command. I learned how to use models, create 
-            video tags so people can't download videos,how to make an audio player on a webpage, and the struggles of responsive web development. `,
+const engineeringHighlights = [
+  "Designed Prisma/PostgreSQL models for users, bank data, bills, recurring bills, and notifications.",
+  "Built server actions for bill creation, deletion, recurrence, projections, and account updates.",
+  "Implemented AI-assisted bill type matching to suggest categories from user-entered bill descriptions.",
+  "Added Vitest coverage for date logic, bill helpers, database helpers, and server actions.",
+  "Configured GitHub Actions CI and Vercel deployment with environment-based production settings.",
+];
 
-            
-    `The Jones Family Chore Site is a simple and efficient tool that automatically rotates daily and weekly chores within the family. 
-    Built using React for the frontend and Express on the backend, it ensures that chores are fairly distributed and updated regularly. 
-    Without the need for user accounts, the system keeps things straightforward, helping the Jones family manage their household tasks effortlessly.`
+const techStack = [
+  "Next.js",
+  "TypeScript",
+  "Tailwind CSS",
+  "Auth.js",
+  "Prisma",
+  "PostgreSQL",
+  "AI type matching",
+  "Vitest",
+  "Vercel",
+];
 
-    
-]
 const ScrollSection = () => {
-const scrollRef = useRef<HTMLDivElement>(null);
-
-  const scroll = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const scrollAmount = direction === "left" ? -window.innerWidth : window.innerWidth;
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-  };
-
   return (
-    <section>
-     
-    <div className="relative w-screen h-screen">
-    
-      <div className="scroll-section" ref={scrollRef}>
-      
-        <Project
-          imgSrc="images/TLV_Website_SC.png"
-          githubLink="https://github.com/tjones-22/thelatestvictimwebsite"
-          projectLink="https://thelatestvictimofficial.com/"
-          description={description[0]}
-          title="The Latest Victim Website"
-        />
+    <section className="w-screen px-6 pb-20">
+      <article className="mx-auto grid max-w-6xl grid-cols-1 overflow-hidden rounded-2xl border-4 border-blue-950 bg-blue-950 shadow-2xl lg:grid-cols-2">
+        <div className="bg-black p-4">
+          <img
+            src="images/BudgetCalendar_SC.svg"
+            alt="Budget Calendar project screenshot"
+            className="h-full min-h-72 w-full rounded-xl object-cover"
+          />
+        </div>
 
-        <Project
-          imgSrc="images/JonesChore_SC.png"
-          githubLink="https://github.com/tristanonesdev/jones-chores-site"
-          projectLink="https://joneschores.org/"
-          description={description[1]}
-          title="Jones Family Chore Site"
-        />
-        
-      </div>
+        <div className="flex flex-col gap-6 bg-blue-950 p-6 text-white lg:p-10">
+          <div>
+            <p className="mb-2 text-sm font-bold uppercase tracking-[0.25em] text-yellow-300">
+              Featured Full-Stack Project
+            </p>
+            <h3 className="text-4xl font-bold text-yellow-300">Budget Calendar</h3>
+          </div>
 
-      {/* Left Scroll Arrow */}
-      <button className="scroll-arrow left" onClick={() => scroll("left")}>
-        &#9664;
-      </button>
+          <p className="content text-lg leading-relaxed">
+            Budget Calendar is a production-style budgeting app where users can sign in, manage bills, track notifications, and simulate future balances from a calendar interface.
+          </p>
 
-      {/* Right Scroll Arrow */}
-      <button className="scroll-arrow right" onClick={() => scroll("right")}>
-        &#9654;
-      </button>
-    </div>
+          <div>
+            <h4 className="mb-3 text-xl font-bold text-yellow-300">Key Features</h4>
+            <ul className="list-disc space-y-2 pl-5">
+              {features.map((feature) => (
+                <li key={feature}>{feature}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="mb-3 text-xl font-bold text-yellow-300">
+              Engineering Highlights
+            </h4>
+            <ul className="list-disc space-y-2 pl-5">
+              {engineeringHighlights.map((highlight) => (
+                <li key={highlight}>{highlight}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            {techStack.map((tech) => (
+              <span
+                key={tech}
+                className="rounded-full border border-yellow-300 px-3 py-1 text-sm font-semibold text-yellow-300"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex flex-col gap-3 pt-2 sm:flex-row">
+            <a
+              href="https://budget-calender-ashy.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-md bg-yellow-300 px-5 py-3 text-center font-bold text-blue-950 transition hover:bg-white"
+            >
+              Live Demo
+            </a>
+            <a
+              href="https://github.com/tjones-22/budget-calender"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-md border-2 border-yellow-300 px-5 py-3 text-center font-bold text-yellow-300 transition hover:bg-yellow-300 hover:text-blue-950"
+            >
+              View Code
+            </a>
+          </div>
+        </div>
+      </article>
     </section>
   );
 };

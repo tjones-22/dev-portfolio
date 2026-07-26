@@ -40,12 +40,6 @@ body {
   transition:1s cubic-bezier(0.44, 0.83, 0.58, 1);
 }
 
-.headshot-img{
-  object-fit: contain;
-  border-radius: 25%;
-  
-}
-
 .scroll-section {
   display: flex;
   flex-direction: row;

@@ -14,12 +14,12 @@ const Navbar = () => {
         >
           <div className='flex flex-col text-[8px] lg:text-[20px]'>
           <p> Phone: </p>
-          <p>(208)-392-7019</p>
+          <p>(208)-586-1980</p>
           </div>
 
           <div className='flex flex-col text-[8px] lg:text-[20px]'>
           <p> Email: </p>
-          <p>tristantherocker@gmail.com</p>
+          <p>tristanjones@u.boisestate.edu</p>
           </div>
 
           <div className='flex flex-col text-[8px] lg:text-[20px]'>
